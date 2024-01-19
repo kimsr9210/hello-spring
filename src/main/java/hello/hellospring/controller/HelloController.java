@@ -11,7 +11,7 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(Model model){ //spring이 model이란것을 만들어서 넣어줌
         model.addAttribute("data","hello!!"); //직접 받음
-        return "hello";
+        return "hello"; //templates/hello.html
     }
 
     //외부에서 파라미터를 받는 방식
