@@ -38,4 +38,8 @@ public class MemoryMemberRepository implements MemberRepository{ //구현체
         return new ArrayList<>(store.values()); //store.value : Member들..
     }
     //자바에서 실무할땐 list를 많이 씀 => 루프돌리기 편해서
+
+    public void clearStore() {
+		store.clear();
+	}
 }
