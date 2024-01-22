@@ -1,8 +1,11 @@
 package hello.hellospring.repository;
 
+import hello.hellospring.domain.Member;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import static org.assertj.core.api.Assertions.*;
+
+import java.util.List;
 import java.util.Optional;
 public class MemoryMemberRepositoryTest {
 
@@ -16,12 +19,12 @@ public class MemoryMemberRepositoryTest {
 
     @Test
     public void save(){
-		Member member - new Member();
+		Member member = new Member();
 		member.setName("spring"); //이름 셋팅
 
 		repository.save(member); //저장
 		
-		Member result = repository.findById(member.getId()).get; 
+		Member result = repository.findById(member.getId()).get();
 		//반환타입이 옵셔널이면? => 옵셔널에서 값을 꺼낼때는 .get()으로 꺼내야함
 
 		//검증
@@ -40,7 +43,7 @@ public class MemoryMemberRepositoryTest {
 		member2.setName("spring2");
 		repository.save(member1);
 
-		Optional<Member> result = repository.findByName("spring1").get();
+		Member result = repository.findByName("spring1").get();
 		assertThat(result).isEqualTo(member1); //같은지 확인
 	}
 
@@ -56,6 +59,6 @@ public class MemoryMemberRepositoryTest {
 		repository.save(member2);
 
 		List<Member> result = repository.findAll();
-		assertTat(result.size()).isEqualTo(2); //회원이 두명이 맞는지 확인
+		assertThat(result.size()).isEqualTo(2); //회원이 두명이 맞는지 확인
 	}
 }
