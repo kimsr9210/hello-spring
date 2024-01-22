@@ -14,9 +14,13 @@ import java.util.List;
 @Controller
 public class MemberController {
 
-    private final MemberService memberService;
 
-    @Autowired //(연결한다)의존관계주입
+    // private final MemberService ms = new MemberService(); 기존코드
+    //별 기능이 없어서, 하나만 생성해놓고 공용으로 쓰면됨
+    private final MemberService memberService; //스프링 컨테이너에 등록
+
+    //생성자
+    @Autowired //(의존 관계 주입)컨트롤러랑 서비스랑 연결
     public MemberController(MemberService memberService){
         this.memberService = memberService;
     }

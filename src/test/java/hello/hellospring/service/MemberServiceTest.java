@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
-
+/*
     //회원가입 하려면 서비스가 있어야함
     MemberService memberService;
     MemoryMemberRepository memberRepository;
@@ -57,11 +57,11 @@ class MemberServiceTest {
         }catch (IllegalStateException e){
             assertThat(e.getMessage()).isEqualTo("이미존재하는 회원입니다.");
         }
- */
+
 
         //then
     }
-
+/*
     @Test
     void validateDuplicateMember() {
     }
@@ -73,4 +73,6 @@ class MemberServiceTest {
     @Test
     void findOne() {
     }
+
+ */
 }

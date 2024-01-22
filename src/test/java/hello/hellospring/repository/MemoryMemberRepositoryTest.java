@@ -19,15 +19,17 @@ public class MemoryMemberRepositoryTest {
 
     @Test
     public void save(){
+		 //given
 		Member member = new Member();
 		member.setName("spring"); //이름 셋팅
 
 		repository.save(member); //저장
-		
+
+		//when
 		Member result = repository.findById(member.getId()).get();
 		//반환타입이 옵셔널이면? => 옵셔널에서 값을 꺼낼때는 .get()으로 꺼내야함
 
-		//검증
+		//then 검증
 		//System.out.println("result = " + (result == member));
 		//Assertions.assertEquals(member, result);
 		assertThat(member).isEqualTo(result); //같은지 확인
