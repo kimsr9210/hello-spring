@@ -10,7 +10,11 @@ import javax.persistence.EntityManager;
 
 @Configuration
 public class SpringConfig {
+//    스프링 빈등록 2가지
+//    1. 컴포먼트 스캔 -> 자동등록
+//    2. 직접설정파일 등록
 
+    //<<직접설정파일 등록>>
     private EntityManager em;
 
     @Autowired
@@ -24,9 +28,9 @@ public class SpringConfig {
     }
     @Bean
     public MemberRepository memberRepository() {
-// return new MemoryMemberRepository();
-// return new JdbcMemberRepository(dataSource);
-// return new JdbcTemplateMemberRepository(dataSource);
+        // return new MemoryMemberRepository();
+        // return new JdbcMemberRepository(dataSource);
+        // return new JdbcTemplateMemberRepository(dataSource);
         return new JpaMemberRepository(em);
     }
 }
