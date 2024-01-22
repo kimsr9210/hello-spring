@@ -38,9 +38,9 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping("/members/new")
+    @GetMapping("/members/new") //받음
     public String createForm(){
-        return "members/createMemberForm";
+        return "members/createMemberForm"; //이동
     }
 
     @PostMapping("/members/new")
@@ -51,7 +51,7 @@ public class MemberController {
         System.out.println("member.getNamme::::::::::::" + member.getName());
 
         memberService.join(member);
-    return "redirect:/";
+    return "redirect:/"; //홈화면으로 보냄
     }
 
     @GetMapping("/members")
