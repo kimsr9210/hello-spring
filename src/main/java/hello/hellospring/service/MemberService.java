@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 @Service
+@Transactional //데이터를 저장하고 변경할때 트랜젝선을 써야함, JPA는 join들어올때 모든데이터 변경이 트렌젝션 안에서 실행되어야함
 public class MemberService {
 
     //기존코드
@@ -22,7 +23,7 @@ public class MemberService {
     }
 
     //회원가입
-    @Transactional //JPA는 join들어올때 모든데이터 변경이 트렌젝션 안에서 실행되어야함 
+
     public Long join(Member member) {
 
         validateDuplicateMember(member); //중복회원 검증
